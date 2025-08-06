@@ -7,8 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#featured-projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#competencies">Competencies</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
+            <img src="public/profile.png" alt="Rob Cooper" class="profile-pic">
             <h1>Rob Cooper</h1>
             <h2>AI & Data Professional | GenAI Specialist</h2>
             <p>Riverview, Queensland | 0477 016 853 | mrrobbiec@outlook.com</p>
@@ -47,13 +61,28 @@
     <section id="skills">
         <div class="container">
             <h3>Technical Skills</h3>
-            <ul>
-                <li><strong>AI & ML:</strong> OpenAI, Anthropic, LLAMA, Azure AI, Multi-Agent ML Systems, LangChain, NumPy, PyTorch</li>
-                <li><strong>Cloud & Data:</strong> Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP, SQL</li>
-                <li><strong>Development:</strong> Python, Next.js, React</li>
-                <li><strong>Frameworks:</strong> Google ADK, Vertex, Strands, OpenAI Agents SDK, Azure/li>
-                <li><strong>Business Tools:</strong> PowerBI, Office 365, CRM Systems</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>AI & ML</h4>
+                    <p>OpenAI, Anthropic, LLAMA, Azure AI, Multi-Agent ML Systems, LangChain, NumPy, PyTorch</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & Data</h4>
+                    <p>Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP, SQL</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Development</h4>
+                    <p>Python, C#, .NET, Next.js, React</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks</h4>
+                    <p>Azure Semantic Kernel, Prompt Flow, Langgraph, AutoGen, CrewAI, AutoGPT, Google ADK, Vertex, Strands, OpenAI Agents SDK</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Business Tools</h4>
+                    <p>PowerBI, Office 365, CRM Systems</p>
+                </div>
+            </div>
         </div>
     </section>
 

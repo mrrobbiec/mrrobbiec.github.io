@@ -49,6 +49,44 @@ section h3 {
     color: #333;
 }
 
+#featured-projects .project-card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+#featured-projects .project-card img {
+    width: 300px;
+    object-fit: cover;
+}
+
+#featured-projects .project-card-content {
+    padding: 1.5rem;
+}
+
+#featured-projects .project-card-content h4 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+#featured-projects .project-card-content .btn {
+    display: inline-block;
+    background: #0779e4;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+#featured-projects .project-card-content .btn:hover {
+    background: #0566b2;
+}
+
 #skills ul {
     list-style: none;
     padding: 0;

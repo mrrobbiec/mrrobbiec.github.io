@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rob Cooper - AI & Data Professional</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="https://unpkg.com/rough-notation?module"></script>
     <style>
         * {
@@ -69,10 +70,18 @@
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.3s ease;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             padding: 0.5rem 0;
             position: relative;
             padding-left: 1.5rem;
+        }
+
+        nav a svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
         }
 
         nav a::before {
@@ -146,7 +155,9 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2.5rem;
             background: transparent;
             color: var(--text-primary);
@@ -159,6 +170,12 @@
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.9s;
             margin-right: 1rem;
+        }
+
+        .cta-button svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
         }
 
         .cta-button::before {
@@ -295,7 +312,9 @@
         }
 
         .project-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.8rem 2rem;
             background: transparent;
             color: var(--text-primary);
@@ -305,6 +324,12 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 2;
         }
 
         .project-link::before {
@@ -358,6 +383,15 @@
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--accent-light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-category h3 svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
         }
 
         .skill-category p {
@@ -538,6 +572,15 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-detail svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
         }
 
         .contact-detail:hover {
@@ -655,11 +698,11 @@
     <nav>
         <div class="logo">Rob Cooper</div>
         <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#summary"><i data-lucide="user"></i>Summary</a></li>
+            <li><a href="#projects"><i data-lucide="briefcase"></i>Projects</a></li>
+            <li><a href="#skills"><i data-lucide="zap"></i>Skills</a></li>
+            <li><a href="#experience"><i data-lucide="clock"></i>Experience</a></li>
+            <li><a href="#contact"><i data-lucide="mail"></i>Contact</a></li>
         </ul>
     </nav>
 
@@ -669,8 +712,8 @@
             <h1>Rob Cooper</h1>
             <div class="subtitle">AI & Data Professional | <span class="annotate-highlight">GenAI Specialist</span></div>
             <p>Innovative Technology Leader with proven expertise in <span class="annotate-underline">Generative AI</span> and <span class="annotate-underline">enterprise implementations</span>.</p>
-            <a href="#projects" class="cta-button">View Projects</a>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="#projects" class="cta-button"><i data-lucide="folder"></i>View Projects</a>
+            <a href="#contact" class="cta-button"><i data-lucide="send"></i>Get In Touch</a>
         </div>
     </section>
 
@@ -691,7 +734,7 @@
             <div class="project-info">
                 <h3>Petbarn AI Chatbot</h3>
                 <p>Developed in collaboration with Microsoft and Insight Enterprises, PetAI is a generative AI-powered pet care assistant for Petbarn. Launched in October 2024, it answers customer questions, recommends products, and connects users with veterinary services. The project is a <span class="annotate-box">finalist in the Financial Review AI Awards</span>.</p>
-                <a href="https://www.afr.com/technology/this-chatbot-for-pet-owners-will-answer-your-hairy-questions-20250515-p5lzkp" target="_blank" class="project-link">Read The AFR Article</a>
+                <a href="https://www.afr.com/technology/this-chatbot-for-pet-owners-will-answer-your-hairy-questions-20250515-p5lzkp" target="_blank" class="project-link">Read The AFR Article<i data-lucide="external-link"></i></a>
             </div>
         </div>
 
@@ -700,7 +743,7 @@
             <div class="project-info">
                 <h3>Cricket Australia AI Insights</h3>
                 <p>Architected an innovative <span class="annotate-underline">multi-agent AI system</span> that aggregates <span class="annotate-highlight">millions of data points</span> to deliver real-time insights for live cricket matches. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
-                <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article</a>
+                <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article<i data-lucide="external-link"></i></a>
             </div>
         </div>
     </section>
@@ -710,23 +753,23 @@
         <h2>Comprehensive technical<br>proficiency</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>AI & ML</h3>
+                <h3><i data-lucide="brain"></i>AI & ML</h3>
                 <p>OpenAI, Anthropic, LLAMA, Azure AI, Multi-Agent ML Systems, LangChain, NumPy, PyTorch</p>
             </div>
             <div class="skill-category">
-                <h3>Cloud & Data</h3>
+                <h3><i data-lucide="cloud"></i>Cloud & Data</h3>
                 <p>Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP</p>
             </div>
             <div class="skill-category">
-                <h3>Development</h3>
+                <h3><i data-lucide="code"></i>Development</h3>
                 <p>Python, C#, .NET, Next.js, React</p>
             </div>
             <div class="skill-category">
-                <h3>Frameworks</h3>
+                <h3><i data-lucide="box"></i>Frameworks</h3>
                 <p>Azure Semantic Kernel, Prompt Flow, Langgraph, AutoGen, CrewAI, AutoGPT, Google ADK, Vertex, Strands, OpenAI Agents SDK</p>
             </div>
             <div class="skill-category">
-                <h3>Business Tools</h3>
+                <h3><i data-lucide="bar-chart"></i>Business Tools</h3>
                 <p>PowerBI, Office 365, CRM Systems</p>
             </div>
         </div>
@@ -918,9 +961,9 @@
             <h2>Let's discuss your<br>next AI initiative</h2>
             <p>Available for consulting and collaboration on innovative AI projects</p>
             <div class="contact-info">
-                <a href="mailto:mrrobbiec@outlook.com" class="contact-detail">mrrobbiec@outlook.com</a>
-                <span class="contact-detail">0477 016 853</span>
-                <span class="contact-detail">Riverview, Queensland</span>
+                <a href="mailto:mrrobbiec@outlook.com" class="contact-detail"><i data-lucide="mail"></i>mrrobbiec@outlook.com</a>
+                <span class="contact-detail"><i data-lucide="phone"></i>0477 016 853</span>
+                <span class="contact-detail"><i data-lucide="map-pin"></i>Riverview, Queensland</span>
             </div>
         </div>
     </section>
@@ -974,13 +1017,14 @@
         });
 
         // RoughNotation annotations
-        import { annotate, annotationGroup } from 'https://unpkg.com/rough-notation?module';
+        import { annotate } from 'https://unpkg.com/rough-notation?module';
 
-        // Wait for page to load and elements to be visible
+        // Wait for page to load and set up annotations
         window.addEventListener('load', () => {
             const accentColor = '#F0E5E5';
-            const annotations = [];
+            const annotationMap = new Map();
 
+            // Create annotations but don't show them yet
             // Highlight annotations
             document.querySelectorAll('.annotate-highlight').forEach(el => {
                 const annotation = annotate(el, {
@@ -989,7 +1033,7 @@
                     padding: 5,
                     iterations: 2
                 });
-                annotations.push(annotation);
+                annotationMap.set(el, annotation);
             });
 
             // Underline annotations
@@ -1000,7 +1044,7 @@
                     strokeWidth: 2,
                     iterations: 2
                 });
-                annotations.push(annotation);
+                annotationMap.set(el, annotation);
             });
 
             // Circle annotations
@@ -1012,7 +1056,7 @@
                     padding: 8,
                     iterations: 2
                 });
-                annotations.push(annotation);
+                annotationMap.set(el, annotation);
             });
 
             // Box annotations
@@ -1024,13 +1068,33 @@
                     padding: 5,
                     iterations: 2
                 });
-                annotations.push(annotation);
+                annotationMap.set(el, annotation);
             });
 
-            // Create annotation group and show all at once with delay
-            const ag = annotationGroup(annotations);
-            setTimeout(() => ag.show(), 1500);
+            // Set up Intersection Observer for annotations
+            const annotationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const annotation = annotationMap.get(entry.target);
+                        if (annotation && !entry.target.dataset.annotated) {
+                            setTimeout(() => annotation.show(), 300);
+                            entry.target.dataset.annotated = 'true';
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px'
+            });
+
+            // Observe all annotated elements
+            annotationMap.forEach((annotation, element) => {
+                annotationObserver.observe(element);
+            });
         });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
 </html>

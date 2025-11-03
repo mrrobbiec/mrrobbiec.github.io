@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rob Cooper - AI & Data Professional</title>
+    <script type="module" src="https://unpkg.com/rough-notation?module"></script>
     <style>
         * {
             margin: 0;
@@ -12,12 +13,12 @@
         }
 
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --text-primary: #e8e8e8;
-            --text-secondary: #a0a0a0;
-            --accent: #8b7355;
-            --accent-light: #b8956a;
+            --bg-primary: #F4F3F1;
+            --bg-secondary: #F4F3F1;
+            --text-primary: #68756D;
+            --text-secondary: #A1A79E;
+            --accent: #B57B66;
+            --accent-light: #B57B66;
         }
 
         body {
@@ -26,102 +27,79 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 1px solid var(--accent-light);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.15s ease, opacity 0.15s ease;
-            opacity: 0;
-        }
-
-        .cursor-follower {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.3s cubic-bezier(0.75, -0.5, 0, 1.75);
-            opacity: 0;
-        }
-
-        body:hover .cursor,
-        body:hover .cursor-follower {
-            opacity: 1;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem 5%;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        header.hidden {
-            transform: translateY(-100%);
-        }
-
+        /* Sidebar Navigation */
         nav {
-            max-width: 1400px;
-            margin: 0 auto;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 250px;
+            background: var(--bg-secondary);
+            border-right: 1px solid rgba(139, 115, 85, 0.1);
+            padding: 3rem 2rem;
+            z-index: 1000;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 3rem;
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         nav ul {
             display: flex;
-            gap: 3rem;
+            flex-direction: column;
+            gap: 1.5rem;
             list-style: none;
+            flex: 1;
+        }
+
+        nav li {
+            position: relative;
         }
 
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
             position: relative;
+            padding-left: 1.5rem;
         }
 
-        nav a::after {
+        nav a::before {
             content: '';
             position: absolute;
-            bottom: -4px;
             left: 0;
+            top: 50%;
+            transform: translateY(-50%);
             width: 0;
-            height: 1px;
+            height: 2px;
             background: var(--accent);
             transition: width 0.3s ease;
         }
 
-        nav a:hover {
+        nav a:hover,
+        nav a.active {
             color: var(--text-primary);
         }
 
-        nav a:hover::after {
-            width: 100%;
+        nav a:hover::before,
+        nav a.active::before {
+            width: 10px;
+        }
+
+        /* Main Content Area */
+        body {
+            margin-left: 250px;
         }
 
         /* Hero Section */
@@ -282,7 +260,7 @@
             margin-bottom: 5rem;
             padding: 3rem;
             background: var(--bg-primary);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(181, 123, 102, 0.2);
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.6s ease;
@@ -301,7 +279,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(181, 123, 102, 0.15);
         }
 
         .project-info h3 {
@@ -360,7 +338,7 @@
         .skill-category {
             padding: 2rem;
             background: var(--bg-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(181, 123, 102, 0.2);
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
@@ -468,7 +446,7 @@
         .education-item {
             padding: 2.5rem;
             background: var(--bg-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(181, 123, 102, 0.2);
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
@@ -522,7 +500,7 @@
         }
 
         .competency-item:hover {
-            background: rgba(139, 115, 85, 0.05);
+            background: rgba(181, 123, 102, 0.1);
             color: var(--text-primary);
         }
 
@@ -569,7 +547,7 @@
         /* Footer */
         footer {
             padding: 3rem 5%;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(181, 123, 102, 0.15);
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
@@ -591,9 +569,54 @@
             }
         }
 
+        @media (max-width: 968px) {
+            nav {
+                width: 200px;
+                padding: 2rem 1.5rem;
+            }
+
+            body {
+                margin-left: 200px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                bottom: auto;
+                padding: 1.5rem;
+                flex-direction: row;
+                align-items: center;
+                border-right: none;
+                border-bottom: 1px solid rgba(181, 123, 102, 0.15);
+            }
+
             nav ul {
-                gap: 1.5rem;
+                flex-direction: row;
+                gap: 1rem;
+                flex: 0;
+                overflow-x: auto;
+                padding: 0.5rem 0;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                padding: 0.3rem 0;
+                white-space: nowrap;
+            }
+
+            body {
+                margin-left: 0;
+                margin-top: 80px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
             }
 
             .timeline {
@@ -621,32 +644,31 @@
             section {
                 padding: 6rem 5%;
             }
+
+            .hero {
+                height: calc(100vh - 80px);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <header>
-        <nav>
-            <div class="logo">Rob Cooper</div>
-            <ul>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">Rob Cooper</div>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="hero">
         <div class="grid-bg"></div>
         <div class="hero-content">
             <h1>Rob Cooper</h1>
-            <div class="subtitle">AI & Data Professional | GenAI Specialist</div>
-            <p>Innovative Technology Leader with proven expertise in Generative AI and enterprise implementations.</p>
+            <div class="subtitle">AI & Data Professional | <span class="annotate-highlight">GenAI Specialist</span></div>
+            <p>Innovative Technology Leader with proven expertise in <span class="annotate-underline">Generative AI</span> and <span class="annotate-underline">enterprise implementations</span>.</p>
             <a href="#projects" class="cta-button">View Projects</a>
             <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
@@ -656,7 +678,7 @@
         <div class="section-label">Professional Summary</div>
         <h2>Pioneering enterprise<br>AI solutions</h2>
         <div class="summary-content">
-            <p>Recognised as a thought-leader at Insight in novel GenAI applications. Delivered multiple production-ready multi-agent architectures and LLM-powered solutions. Creative problem-solving combined with technical cross-disciplinary proficiency, bringing cutting-edge AI capabilities to enterprise environments.</p>
+            <p>Recognised as a <span class="annotate-circle">thought-leader</span> at Insight in novel GenAI applications. Delivered multiple <span class="annotate-highlight">production-ready</span> <span class="annotate-underline">multi-agent architectures</span> and LLM-powered solutions. Creative problem-solving combined with technical cross-disciplinary proficiency, bringing cutting-edge AI capabilities to enterprise environments.</p>
         </div>
     </section>
 
@@ -668,7 +690,7 @@
             <img src="public/petbarn.png" alt="Petbarn AI Chatbot" class="project-image">
             <div class="project-info">
                 <h3>Petbarn AI Chatbot</h3>
-                <p>Developed in collaboration with Microsoft and Insight Enterprises, PetAI is a generative AI-powered pet care assistant for Petbarn. Launched in October 2024, it answers customer questions, recommends products, and connects users with veterinary services. The project is a finalist in the Financial Review AI Awards.</p>
+                <p>Developed in collaboration with Microsoft and Insight Enterprises, PetAI is a generative AI-powered pet care assistant for Petbarn. Launched in October 2024, it answers customer questions, recommends products, and connects users with veterinary services. The project is a <span class="annotate-box">finalist in the Financial Review AI Awards</span>.</p>
                 <a href="https://www.afr.com/technology/this-chatbot-for-pet-owners-will-answer-your-hairy-questions-20250515-p5lzkp" target="_blank" class="project-link">Read The AFR Article</a>
             </div>
         </div>
@@ -677,7 +699,7 @@
             <img src="public/cricket-australia-app.png" alt="Cricket Australia AI Insights" class="project-image">
             <div class="project-info">
                 <h3>Cricket Australia AI Insights</h3>
-                <p>Architected an innovative multi-agent AI system that aggregates millions of data points to deliver real-time insights for live cricket matches. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
+                <p>Architected an innovative <span class="annotate-underline">multi-agent AI system</span> that aggregates <span class="annotate-highlight">millions of data points</span> to deliver real-time insights for live cricket matches. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
                 <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article</a>
             </div>
         </div>
@@ -907,16 +929,7 @@
         <p>&copy; 2025 Rob Cooper. AI & Data Professional.</p>
     </footer>
 
-    <script>
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-            cursorFollower.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
-        });
-
+    <script type="module">
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -934,22 +947,6 @@
         // Observe elements
         document.querySelectorAll('.section-label, h2, .summary-content, .project-featured, .skill-category, .job, .education-item, .competency-item').forEach(el => {
             observer.observe(el);
-        });
-
-        // Hide/show header on scroll
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            
-            lastScroll = currentScroll;
         });
 
         // Smooth scroll
@@ -974,6 +971,65 @@
                 hero.style.transform = `translateY(${scrolled * 0.4}px)`;
                 hero.style.opacity = 1 - (scrolled / 700);
             }
+        });
+
+        // RoughNotation annotations
+        import { annotate, annotationGroup } from 'https://unpkg.com/rough-notation?module';
+
+        // Wait for page to load and elements to be visible
+        window.addEventListener('load', () => {
+            const accentColor = '#F0E5E5';
+            const annotations = [];
+
+            // Highlight annotations
+            document.querySelectorAll('.annotate-highlight').forEach(el => {
+                const annotation = annotate(el, {
+                    type: 'highlight',
+                    color: accentColor,
+                    padding: 5,
+                    iterations: 2
+                });
+                annotations.push(annotation);
+            });
+
+            // Underline annotations
+            document.querySelectorAll('.annotate-underline').forEach(el => {
+                const annotation = annotate(el, {
+                    type: 'underline',
+                    color: accentColor,
+                    strokeWidth: 2,
+                    iterations: 2
+                });
+                annotations.push(annotation);
+            });
+
+            // Circle annotations
+            document.querySelectorAll('.annotate-circle').forEach(el => {
+                const annotation = annotate(el, {
+                    type: 'circle',
+                    color: accentColor,
+                    strokeWidth: 2,
+                    padding: 8,
+                    iterations: 2
+                });
+                annotations.push(annotation);
+            });
+
+            // Box annotations
+            document.querySelectorAll('.annotate-box').forEach(el => {
+                const annotation = annotate(el, {
+                    type: 'box',
+                    color: accentColor,
+                    strokeWidth: 2,
+                    padding: 5,
+                    iterations: 2
+                });
+                annotations.push(annotation);
+            });
+
+            // Create annotation group and show all at once with delay
+            const ag = annotationGroup(annotations);
+            setTimeout(() => ag.show(), 1500);
         });
     </script>
 </body>

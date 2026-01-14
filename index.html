@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rob Cooper - AI & Data Professional</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script type="module" src="https://unpkg.com/rough-notation?module"></script>
     <style>
         * {
@@ -433,6 +433,27 @@
             line-height: 1.8;
         }
 
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
         /* Experience Section */
         .experience {
             background: var(--bg-secondary);
@@ -664,6 +685,7 @@
             .logo-avatar-wrapper {
                 width: 38px;
                 height: 38px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -747,11 +769,11 @@
             <span>Rob Cooper</span>
         </div>
         <ul>
-            <li><a href="#summary"><i data-lucide="user"></i>Summary</a></li>
-            <li><a href="#projects"><i data-lucide="briefcase"></i>Projects</a></li>
-            <li><a href="#skills"><i data-lucide="zap"></i>Skills</a></li>
-            <li><a href="#experience"><i data-lucide="clock"></i>Experience</a></li>
-            <li><a href="#contact"><i data-lucide="mail"></i>Contact</a></li>
+            <li><a href="#summary"><i class="ph-duotone ph-user"></i>Summary</a></li>
+            <li><a href="#projects"><i class="ph-duotone ph-briefcase"></i>Projects</a></li>
+            <li><a href="#skills"><i class="ph-duotone ph-lightning"></i>Skills</a></li>
+            <li><a href="#experience"><i class="ph-duotone ph-clock"></i>Experience</a></li>
+            <li><a href="#contact"><i class="ph-duotone ph-envelope"></i>Contact</a></li>
         </ul>
     </nav>
 
@@ -762,8 +784,8 @@
             <div class="subtitle">GenAI Thought Leader | <span class="annotate-highlight">AI Capability & Strategy Specialist</span></div>
             <p>Pioneering enterprise GenAI solutions through <span class="annotate-underline">strategic AI capability mapping</span> and <span class="annotate-underline">multi-agent architecture design</span>. 
                 Recognised thought leader in building production-ready AI systems.</p>
-            <a href="#projects" class="cta-button"><i data-lucide="folder"></i>View Projects</a>
-            <a href="#contact" class="cta-button"><i data-lucide="send"></i>Get In Touch</a>
+            <a href="#projects" class="cta-button"><i class="ph-duotone ph-folder-open"></i>View Projects</a>
+            <a href="#contact" class="cta-button"><i class="ph-duotone ph-paper-plane-tilt"></i>Get In Touch</a>
         </div>
     </section>
 
@@ -784,7 +806,7 @@
             <div class="project-info">
                 <h3>Petbarn AI Chatbot</h3>
                 <p>Developed in collaboration with Microsoft and Insight Enterprises, PetAI is a generative AI-powered pet care assistant for Petbarn. Launched in October 2024, it answers customer questions, recommends products, and connects users with veterinary services. The project is a <span class="annotate-box">finalist in the Financial Review AI Awards</span>.</p>
-                <a href="https://www.afr.com/technology/this-chatbot-for-pet-owners-will-answer-your-hairy-questions-20250515-p5lzkp" target="_blank" class="project-link">Read The AFR Article<i data-lucide="external-link"></i></a>
+                <a href="https://www.afr.com/technology/this-chatbot-for-pet-owners-will-answer-your-hairy-questions-20250515-p5lzkp" target="_blank" class="project-link">Read The AFR Article<i class="ph-duotone ph-arrow-square-out"></i></a>
             </div>
         </div>
 
@@ -793,7 +815,7 @@
             <div class="project-info">
                 <h3>Cricket Australia AI Insights</h3>
                 <p>Architected an <span class="annotate-highlight">innovative multi-agent AI system </span> that aggregates millions of data points to deliver <span class="annotate-highlight">real-time insights for live cricket matches</span>. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
-                <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article<i data-lucide="external-link"></i></a>
+                <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article<i class="ph-duotone ph-arrow-square-out"></i></a>
             </div>
         </div>
     </section>
@@ -803,28 +825,74 @@
         <h2>Strategic & technical<br>capabilities</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3><i data-lucide="target"></i>AI Strategy & Mapping</h3>
-                <p>AI Capability Assessment, Strategic Roadmap Development, Enterprise AI Maturity Evaluation, Use Case Identification, ROI Analysis, Technology Selection & Architecture Design</p>
+                <h3><i class="ph-duotone ph-crosshair"></i>AI Strategy & Mapping</h3>
+                <ul>
+                    <li>AI Capability Assessment</li>
+                    <li>Strategic Roadmap Development</li>
+                    <li>Enterprise AI Maturity Evaluation</li>
+                    <li>Use Case Identification</li>
+                    <li>ROI Analysis</li>
+                    <li>Technology Selection & Architecture Design</li>
+                </ul>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="brain"></i>GenAI & LLMs</h3>
-                <p>OpenAI, Anthropic, LLAMA, Azure OpenAI, Multi-Agent Systems Architecture, Prompt Engineering, RAG Systems, LLM Fine-tuning, Production Deployment</p>
+                <h3><i class="ph-duotone ph-users-three"></i>Leadership</h3>
+                <ul>
+                    <li>Technical Advisory</li>
+                    <li>Stakeholder Engagement</li>
+                    <li>Cross-functional Team Leadership</li>
+                    <li>Enterprise Training & Enablement</li>
+                    <li>Change Management</li>
+                </ul>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="box"></i>AI Frameworks</h3>
-                <p>Azure Semantic Kernel, Prompt Flow, Langgraph, AutoGen, CrewAI, AutoGPT, Google ADK, Vertex AI, OpenAI Agents SDK, LangChain</p>
+                <h3><i class="ph-duotone ph-brain"></i>GenAI & LLMs</h3>
+                <ul>
+                    <li>OpenAI, Anthropic, LLAMA</li>
+                    <li>Azure OpenAI</li>
+                    <li>Multi-Agent Systems Architecture</li>
+                    <li>Prompt Engineering</li>
+                    <li>RAG Systems</li>
+                    <li>LLM Fine-tuning</li>
+                    <li>Production Deployment</li>
+                </ul>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="cloud"></i>Cloud & Data</h3>
-                <p>Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP, Data Pipeline Architecture</p>
+                <h3><i class="ph-duotone ph-cube"></i>AI Frameworks</h3>
+                <ul>
+                    <li>Azure Semantic Kernel</li>
+                    <li>Prompt Flow</li>
+                    <li>Langgraph</li>
+                    <li>AutoGen, CrewAI, AutoGPT</li>
+                    <li>Google ADK</li>
+                    <li>Vertex AI</li>
+                    <li>OpenAI Agents SDK</li>
+                    <li>LangChain</li>
+                </ul>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="code"></i>Development</h3>
-                <p>Python, C#, .NET, FastAPI, Next.js, React, PyTorch, NumPy</p>
+                <h3><i class="ph-duotone ph-cloud-arrow-up"></i>Cloud & Data</h3>
+                <ul>
+                    <li>Azure DevOps</li>
+                    <li>Databricks</li>
+                    <li>Synapse</li>
+                    <li>PySpark</li>
+                    <li>SQL</li>
+                    <li>Google Workspace</li>
+                    <li>GCP</li>
+                    <li>Data Pipeline Architecture</li>
+                </ul>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="users"></i>Leadership</h3>
-                <p>Technical Advisory, Stakeholder Engagement, Cross-functional Team Leadership, Enterprise Training & Enablement, Change Management</p>
+                <h3><i class="ph-duotone ph-code"></i>Development</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C#, .NET</li>
+                    <li>FastAPI</li>
+                    <li>Next.js, React</li>
+                    <li>PyTorch</li>
+                    <li>NumPy</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -834,7 +902,18 @@
         <h2>Delivering transformative<br>solutions</h2>
         <div class="timeline">
             <div class="job">
-                <h3>Technical Specialist - AI Lead | Insight (2022 - Present)</h3>
+                <h3>Global Data Science Team Lead | Flight Centre Travel Group (2025 - Present)</h3>
+                <ul>
+                    <li>Leading FCTG's global data science initiatives, driving strategic AI capability development across B2B and B2C applications</li>
+                    <li>Architect of the <span class="annotate-highlight">Agentic Travel Framework (ATF)</span>, announced in FCTG's ASX announcement in November 2025</li>
+                    <li>Designed and implemented ATF as a unified, modular system serving as central infrastructure for FCTG's strategic AI capabilities</li>
+                    <li>Established enterprise-grade AI architecture supporting multiple AI products and application utilities across the organisation</li>
+                    <li>Leading cross-functional teams to deliver scalable AI solutions for travel industry transformation</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Technical Specialist - AI Lead | Insight (2022 - 2025)</h3>
                 <ul>
                     <li>Recognised thought leader in GenAI applications, driving enterprise AI transformation across multiple sectors</li>
                     <li>Specialist in AI capability mapping and strategic roadmap development for Fortune 500 clients</li>
@@ -1024,15 +1103,15 @@
             <h2>Let's map your<br>AI capabilities</h2>
             <p>Available for strategic AI advisory, capability mapping, and enterprise GenAI transformation initiatives</p>
             <div class="contact-info">
-                <a href="mailto:mrrobbiec@outlook.com" class="contact-detail"><i data-lucide="mail"></i>mrrobbiec@outlook.com</a>
-                <span class="contact-detail"><i data-lucide="phone"></i>0477 016 853</span>
-                <span class="contact-detail"><i data-lucide="map-pin"></i>Riverview, Queensland</span>
+                <a href="mailto:mrrobbiec@outlook.com" class="contact-detail"><i class="ph-duotone ph-envelope-simple"></i>mrrobbiec@outlook.com</a>
+                <span class="contact-detail"><i class="ph-duotone ph-phone"></i>0477 016 853</span>
+                <span class="contact-detail"><i class="ph-duotone ph-map-pin"></i>Riverview, Queensland</span>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Rob Cooper. GenAI Thought Leader | AI Capability & Strategy Specialist.</p>
+        <p>Rob Cooper | GenAI Thought Leader | AI Capability & Strategy Specialist.</p>
     </footer>
 
     <script type="module">
@@ -1155,9 +1234,6 @@
                 annotationObserver.observe(element);
             });
         });
-
-        // Initialize Lucide icons
-        lucide.createIcons();
     </script>
 </body>
 </html>

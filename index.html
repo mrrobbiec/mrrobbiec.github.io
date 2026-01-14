@@ -480,6 +480,10 @@
             opacity: 0;
             transform: translateX(-20px);
             transition: all 0.6s ease;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(181, 123, 102, 0.1);
         }
 
         .job.visible {
@@ -487,11 +491,16 @@
             transform: translateX(0);
         }
 
+        .job:hover {
+            border-color: rgba(181, 123, 102, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
         .job::before {
             content: '';
             position: absolute;
             left: -3.4rem;
-            top: 0.5rem;
+            top: 2.5rem;
             width: 9px;
             height: 9px;
             background: var(--accent);
@@ -499,9 +508,32 @@
             border: 2px solid var(--bg-secondary);
         }
 
+        .job-content {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 2rem;
+        }
+
+        .job-logo-column {
+            display: flex;
+            justify-content: center;
+            padding-top: 0.5rem;
+        }
+
+        .job-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .job-text-column {
+            flex: 1;
+        }
+
         .job h3 {
             font-size: 1.4rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
 
@@ -736,6 +768,16 @@
                 left: -2.4rem;
             }
 
+            .job-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .job-logo-column {
+                justify-content: flex-start;
+                padding-top: 0;
+            }
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
@@ -902,165 +944,271 @@
         <h2>Delivering transformative<br>solutions</h2>
         <div class="timeline">
             <div class="job">
-                <h3>Global Data Science Team Lead | Flight Centre Travel Group (2025 - Present)</h3>
-                <ul>
-                    <li>Leading FCTG's global data science initiatives, driving strategic AI capability development across B2B and B2C applications</li>
-                    <li>Architect of the <span class="annotate-highlight">Agentic Travel Framework (ATF)</span>, announced in FCTG's ASX announcement in November 2025</li>
-                    <li>Designed and implemented ATF as a unified, modular system serving as central infrastructure for FCTG's strategic AI capabilities</li>
-                    <li>Established enterprise-grade AI architecture supporting multiple AI products and application utilities across the organisation</li>
-                    <li>Leading cross-functional teams to deliver scalable AI solutions for travel industry transformation</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/fctg.png" alt="Flight Centre Travel Group" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Global Data Science Team Lead | Flight Centre Travel Group (2025 - Present)</h3>
+                        <ul>
+                            <li>Leading FCTG's global data science initiatives, driving strategic AI capability development across B2B and B2C applications</li>
+                            <li>Architect of the <span class="annotate-highlight">Agentic Travel Framework (ATF)</span>, announced in FCTG's ASX announcement in November 2025</li>
+                            <li>Designed and implemented ATF as a unified, modular system serving as central infrastructure for FCTG's strategic AI capabilities</li>
+                            <li>Established enterprise-grade AI architecture supporting multiple AI products and application utilities across the organisation</li>
+                            <li>Leading cross-functional teams to deliver scalable AI solutions for travel industry transformation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Technical Specialist - AI Lead | Insight (2022 - 2025)</h3>
-                <ul>
-                    <li>Recognised thought leader in GenAI applications, driving enterprise AI transformation across multiple sectors</li>
-                    <li>Specialist in AI capability mapping and strategic roadmap development for Fortune 500 clients</li>
-                    <li>Conduct comprehensive AI maturity assessments and capability gap analysis for enterprise organisations</li>
-                    <li>Lead strategic AI advisory engagements, translating business objectives into actionable AI implementation strategies</li>
-                    <li>Established enterprise GenAI implementation best practices and governance frameworks</li>
-                    <li>Architected and delivered production-ready multi-agent systems for Cricket Australia, Tourism NT, and Petbarn</li>
-                    <li>Pioneered Insight's first LLM-powered structured data querying system (Insight Assist)</li>
-                    <li>Created strategic proof-of-concept AI solutions for Dominos, South32, and UniSC, demonstrating ROI and feasibility</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/insight.png" alt="Insight" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Technical Specialist - AI Lead | Insight (2022 - 2025)</h3>
+                        <ul>
+                            <li>Recognised thought leader in GenAI applications, driving enterprise AI transformation across multiple sectors</li>
+                            <li>Specialist in AI capability mapping and strategic roadmap development for Fortune 500 clients</li>
+                            <li>Conduct comprehensive AI maturity assessments and capability gap analysis for enterprise organisations</li>
+                            <li>Lead strategic AI advisory engagements, translating business objectives into actionable AI implementation strategies</li>
+                            <li>Established enterprise GenAI implementation best practices and governance frameworks</li>
+                            <li>Architected and delivered production-ready multi-agent systems for Cricket Australia, Tourism NT, and Petbarn</li>
+                            <li>Pioneered Insight's first LLM-powered structured data querying system (Insight Assist)</li>
+                            <li>Created strategic proof-of-concept AI solutions for Dominos, South32, and UniSC, demonstrating ROI and feasibility</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Architect | Cricket Australia (2024)</h3>
-                <ul>
-                    <li>Architected and implemented an innovative multi-agent AI system for live cricket analysis</li>
-                    <li>Designed specialised agents (Insight, Refinement, Fact-Checker)</li>
-                    <li>Integrated external data sources and custom tooling</li>
-                    <li>Built production-ready API endpoints</li>
-                    <li>Utilised advanced LLM prompting strategies</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/cricket_australia.png" alt="Cricket Australia" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Architect | Cricket Australia (2024)</h3>
+                        <ul>
+                            <li>Architected and implemented an innovative multi-agent AI system for live cricket analysis</li>
+                            <li>Designed specialised agents (Insight, Refinement, Fact-Checker)</li>
+                            <li>Integrated external data sources and custom tooling</li>
+                            <li>Built production-ready API endpoints</li>
+                            <li>Utilised advanced LLM prompting strategies</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Architect | Tourism Northern Territory (2024)</h3>
-                <ul>
-                    <li>Designed multi-agent solution to build custom travel itineraries</li>
-                    <li>Implemented tool calls to multiple data sources</li>
-                    <li>Features tight integration between the UI experience and the agent</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/tourisum_nt.png" alt="Tourism Northern Territory" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Architect | Tourism Northern Territory (2024)</h3>
+                        <ul>
+                            <li>Designed multi-agent solution to build custom travel itineraries</li>
+                            <li>Implemented tool calls to multiple data sources</li>
+                            <li>Features tight integration between the UI experience and the agent</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Architect | Greencross Petbarn (2024)</h3>
-                <ul>
-                    <li>Designed and built into production a cutting-edge multi-agent FastAPI</li>
-                    <li>Successfully launched into production on the 22nd of October</li>
-                    <li>Pioneered one of Australia's first production-ready e-commerce agent collaboration systems</li>
-                    <li>Designed and implemented thread-persistent memory architecture</li>
-                    <li>Led iterative testing cycles with stakeholder feedback</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/greencross_petbarn.png" alt="Greencross Petbarn" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Architect | Greencross Petbarn (2024)</h3>
+                        <ul>
+                            <li>Designed and built into production a cutting-edge multi-agent FastAPI</li>
+                            <li>Successfully launched into production on the 22nd of October</li>
+                            <li>Pioneered one of Australia's first production-ready e-commerce agent collaboration systems</li>
+                            <li>Designed and implemented thread-persistent memory architecture</li>
+                            <li>Led iterative testing cycles with stakeholder feedback</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Architect | South32 (2023)</h3>
-                <ul>
-                    <li>Developed proof-of-concept AI safety monitoring system</li>
-                    <li>Built multi-agent architecture for real-time CCTV analysis</li>
-                    <li>Implemented automated safety risk detection and reporting</li>
-                    <li>Engineered system to process live video feeds</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/south32.png" alt="South32" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Architect | South32 (2023)</h3>
+                        <ul>
+                            <li>Developed proof-of-concept AI safety monitoring system</li>
+                            <li>Built multi-agent architecture for real-time CCTV analysis</li>
+                            <li>Implemented automated safety risk detection and reporting</li>
+                            <li>Engineered system to process live video feeds</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Architect | Dominos (2023)</h3>
-                <ul>
-                    <li>Architectural design of proof-of-concept conversational AI system</li>
-                    <li>Implemented multi-agent architecture for order verification</li>
-                    <li>Integrated categorical RAG system for dynamic menu data</li>
-                    <li>Engineered voice interface using Twilio and Whisper</li>
-                    <li>Built FastAPI integration connecting LLMs to ordering systems</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/dominos.png" alt="Dominos" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Architect | Dominos (2023)</h3>
+                        <ul>
+                            <li>Architectural design of proof-of-concept conversational AI system</li>
+                            <li>Implemented multi-agent architecture for order verification</li>
+                            <li>Integrated categorical RAG system for dynamic menu data</li>
+                            <li>Engineered voice interface using Twilio and Whisper</li>
+                            <li>Built FastAPI integration connecting LLMs to ordering systems</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Engineer | Dulux - Cabots (2023)</h3>
-                <ul>
-                    <li>Built a customer assistant chatbot with UI and vector search</li>
-                    <li>Integrated GPT-4 Vision capabilities</li>
-                    <li>Explored integrations with shopping carts</li>
-                    <li>Optimised accelerator codebase performance</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/cabots.png" alt="Dulux - Cabots" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Engineer | Dulux - Cabots (2023)</h3>
+                        <ul>
+                            <li>Built a customer assistant chatbot with UI and vector search</li>
+                            <li>Integrated GPT-4 Vision capabilities</li>
+                            <li>Explored integrations with shopping carts</li>
+                            <li>Optimised accelerator codebase performance</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>AI Engineer | Monash University (2023)</h3>
-                <ul>
-                    <li>Developed an intelligent course advisory system</li>
-                    <li>Engineered multi-agent architecture for academic requirement processing</li>
-                    <li>Implemented a proof of concept multi-agent degree requirement navigation system</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/monash_university.png" alt="Monash University" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>AI Engineer | Monash University (2023)</h3>
+                        <ul>
+                            <li>Developed an intelligent course advisory system</li>
+                            <li>Engineered multi-agent architecture for academic requirement processing</li>
+                            <li>Implemented a proof of concept multi-agent degree requirement navigation system</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Data Architect | Evolution Mining (2022-2023)</h3>
-                <ul>
-                    <li>Led enterprise data platform modernisation</li>
-                    <li>Conducted comprehensive team training programs</li>
-                    <li>Provided technical and strategic guidance</li>
-                    <li>Implemented custom platform enhancements</li>
-                    <li>Reverse engineered critical legacy data pipelines</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/evolution_mining.png" alt="Evolution Mining" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Data Architect | Evolution Mining (2022-2023)</h3>
+                        <ul>
+                            <li>Led enterprise data platform modernisation</li>
+                            <li>Conducted comprehensive team training programs</li>
+                            <li>Provided technical and strategic guidance</li>
+                            <li>Implemented custom platform enhancements</li>
+                            <li>Reverse engineered critical legacy data pipelines</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Senior Data Engineer | Hollard & Commonwealth Bank (2022)</h3>
-                <ul>
-                    <li>Solely responsible for sensitive data transition and transformation during business merger</li>
-                    <li>Designed and built data pipelines for Day 1 Go-Live</li>
-                    <li>Collaborated with PWC and Commonwealth Bank for a seamless transition</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/cba_hollard.png" alt="Hollard & Commonwealth Bank" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Senior Data Engineer | Hollard & Commonwealth Bank (2022)</h3>
+                        <ul>
+                            <li>Solely responsible for sensitive data transition and transformation during business merger</li>
+                            <li>Designed and built data pipelines for Day 1 Go-Live</li>
+                            <li>Collaborated with PWC and Commonwealth Bank for a seamless transition</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>PowerBI Developer | Sydney Water (2022)</h3>
-                <ul>
-                    <li>Developed IoT dashboard for water monitoring</li>
-                    <li>Implemented real-time monitoring solutions</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/sydney_water.png" alt="Sydney Water" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>PowerBI Developer | Sydney Water (2022)</h3>
+                        <ul>
+                            <li>Developed IoT dashboard for water monitoring</li>
+                            <li>Implemented real-time monitoring solutions</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Vice President of Product | Bluebeak.ai (2020 - 2022)</h3>
-                <ul>
-                    <li>Led development of end-to-end managed machine learning tools</li>
-                    <li>Evaluated and deployed various cloud platforms</li>
-                    <li>Led international development team</li>
-                    <li>Established brand identity and marketing guidelines</li>
-                    <li>Refined product strategy</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/bluebeak_ai.png" alt="Bluebeak.ai" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Vice President of Product | Bluebeak.ai (2020 - 2022)</h3>
+                        <ul>
+                            <li>Led development of end-to-end managed machine learning tools</li>
+                            <li>Evaluated and deployed various cloud platforms</li>
+                            <li>Led international development team</li>
+                            <li>Established brand identity and marketing guidelines</li>
+                            <li>Refined product strategy</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Head of Technology | The Music Bus (2016 - 2020)</h3>
-                <ul>
-                    <li>Drove digital transformation across the organisation</li>
-                    <li>Designed custom vehicle solutions with Mercedes Benz</li>
-                    <li>Led migration to paperless operations</li>
-                    <li>Utilised GCP to build custom vehicle monitoring solutions</li>
-                    <li>Developed BI tools</li>
-                    <li>Implemented remote learning solutions during COVID-19</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/the_music_bus.png" alt="The Music Bus" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Head of Technology | The Music Bus (2016 - 2020)</h3>
+                        <ul>
+                            <li>Drove digital transformation across the organisation</li>
+                            <li>Designed custom vehicle solutions with Mercedes Benz</li>
+                            <li>Led migration to paperless operations</li>
+                            <li>Utilised GCP to build custom vehicle monitoring solutions</li>
+                            <li>Developed BI tools</li>
+                            <li>Implemented remote learning solutions during COVID-19</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="job">
-                <h3>Tech Support/UX Specialist | Jumbo (2014 - 2015)</h3>
-                <ul>
-                    <li>Led technical support for Super Stream platform implementation</li>
-                    <li>Created documentation and tutorial videos</li>
-                    <li>Enhanced landing page design and user experience</li>
-                    <li>Developed video content using Adobe After Effects</li>
-                </ul>
+                <div class="job-content">
+                    <div class="job-logo-column">
+                        <img src="images/jumbo.png" alt="Jumbo" class="job-logo">
+                    </div>
+                    <div class="job-text-column">
+                        <h3>Tech Support/UX Specialist | Jumbo (2014 - 2015)</h3>
+                        <ul>
+                            <li>Led technical support for Super Stream platform implementation</li>
+                            <li>Created documentation and tutorial videos</li>
+                            <li>Enhanced landing page design and user experience</li>
+                            <li>Developed video content using Adobe After Effects</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="education">
+    <!-- out of scope for now, leave commented out -->
+    <!-- <section id="education">
         <div class="section-label">Education</div>
         <h2>Academic foundation</h2>
         <div class="education-grid">
@@ -1073,7 +1221,7 @@
                 <p>Queensland Conservatorium Griffith University (2016)</p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="competencies">
         <div class="section-label">Core Competencies</div>

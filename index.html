@@ -51,6 +51,40 @@
             font-weight: 600;
             letter-spacing: -0.02em;
             color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #B57B66, #D4A89A);
+            padding: 2px;
+            position: relative;
+        }
+
+        .logo-avatar-wrapper {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B57B66, #D4A89A);
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: var(--bg-secondary);
         }
 
         nav ul {
@@ -612,6 +646,7 @@
             }
         }
 
+
         @media (max-width: 968px) {
             nav {
                 width: 200px;
@@ -625,6 +660,10 @@
             .logo {
                 font-size: 1.3rem;
             }
+
+            .logo-avatar-wrapper {
+                width: 38px;
+                height: 38px;
         }
 
         @media (max-width: 768px) {
@@ -662,6 +701,11 @@
                 font-size: 1.2rem;
             }
 
+            .logo-avatar-wrapper {
+                width: 36px;
+                height: 36px;
+            }
+
             .timeline {
                 padding-left: 2rem;
             }
@@ -696,7 +740,12 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Rob Cooper</div>
+        <div class="logo">
+            <div class="logo-avatar-wrapper">
+                <img src="headshot.png" alt="Rob Cooper" class="logo-avatar-img">
+            </div>
+            <span>Rob Cooper</span>
+        </div>
         <ul>
             <li><a href="#summary"><i data-lucide="user"></i>Summary</a></li>
             <li><a href="#projects"><i data-lucide="briefcase"></i>Projects</a></li>
@@ -710,8 +759,9 @@
         <div class="grid-bg"></div>
         <div class="hero-content">
             <h1>Rob Cooper</h1>
-            <div class="subtitle">AI & Data Professional | <span class="annotate-highlight">GenAI Specialist</span></div>
-            <p>Innovative Technology Leader with proven expertise in <span class="annotate-underline">Generative AI</span> and <span class="annotate-underline">enterprise implementations</span>.</p>
+            <div class="subtitle">GenAI Thought Leader | <span class="annotate-highlight">AI Capability & Strategy Specialist</span></div>
+            <p>Pioneering enterprise GenAI solutions through <span class="annotate-underline">strategic AI capability mapping</span> and <span class="annotate-underline">multi-agent architecture design</span>. 
+                Recognised thought leader in building production-ready AI systems.</p>
             <a href="#projects" class="cta-button"><i data-lucide="folder"></i>View Projects</a>
             <a href="#contact" class="cta-button"><i data-lucide="send"></i>Get In Touch</a>
         </div>
@@ -719,9 +769,9 @@
 
     <section id="summary">
         <div class="section-label">Professional Summary</div>
-        <h2>Pioneering enterprise<br>AI solutions</h2>
+        <h2>Leading the GenAI<br>transformation</h2>
         <div class="summary-content">
-            <p>Recognised as a <span class="annotate-circle">thought-leader</span> at Insight in novel GenAI applications. Delivered multiple <span class="annotate-highlight">production-ready</span> <span class="annotate-underline">multi-agent architectures</span> and LLM-powered solutions. Creative problem-solving combined with technical cross-disciplinary proficiency, bringing cutting-edge AI capabilities to enterprise environments.</p>
+            <p>Recognised <span class="annotate-circle">thought leader</span> at Insight Enterprises, pioneering novel GenAI applications and enterprise AI transformation. Specialist in <span class="annotate-highlight">AI capability mapping</span> and <span class="annotate-highlight">strategic AI implementation</span>, with proven expertise in translating business requirements into production-ready <span class="annotate-underline">multi-agent architectures</span>. Delivered multiple enterprise-scale GenAI solutions across retail, sports, tourism, and mining sectors, establishing best practices for AI capability assessment, strategic roadmap development, and LLM-powered system design.</p>
         </div>
     </section>
 
@@ -742,7 +792,7 @@
             <img src="public/cricket-australia-app.png" alt="Cricket Australia AI Insights" class="project-image">
             <div class="project-info">
                 <h3>Cricket Australia AI Insights</h3>
-                <p>Architected an innovative <span class="annotate-underline">multi-agent AI system</span> that aggregates <span class="annotate-highlight">millions of data points</span> to deliver real-time insights for live cricket matches. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
+                <p>Architected an <span class="annotate-highlight">innovative multi-agent AI system </span> that aggregates millions of data points to deliver <span class="annotate-highlight">real-time insights for live cricket matches</span>. This tool, featured in the AFR, enhances the fan experience on the Cricket Australia app.</p>
                 <a href="https://www.afr.com/technology/how-cricket-australia-uses-ai-to-connect-with-sports-fans-20250522-p5m1at" target="_blank" class="project-link">Read The AFR Article<i data-lucide="external-link"></i></a>
             </div>
         </div>
@@ -750,27 +800,31 @@
 
     <section id="skills">
         <div class="section-label">Technical Expertise</div>
-        <h2>Comprehensive technical<br>proficiency</h2>
+        <h2>Strategic & technical<br>capabilities</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3><i data-lucide="brain"></i>AI & ML</h3>
-                <p>OpenAI, Anthropic, LLAMA, Azure AI, Multi-Agent ML Systems, LangChain, NumPy, PyTorch</p>
+                <h3><i data-lucide="target"></i>AI Strategy & Mapping</h3>
+                <p>AI Capability Assessment, Strategic Roadmap Development, Enterprise AI Maturity Evaluation, Use Case Identification, ROI Analysis, Technology Selection & Architecture Design</p>
+            </div>
+            <div class="skill-category">
+                <h3><i data-lucide="brain"></i>GenAI & LLMs</h3>
+                <p>OpenAI, Anthropic, LLAMA, Azure OpenAI, Multi-Agent Systems Architecture, Prompt Engineering, RAG Systems, LLM Fine-tuning, Production Deployment</p>
+            </div>
+            <div class="skill-category">
+                <h3><i data-lucide="box"></i>AI Frameworks</h3>
+                <p>Azure Semantic Kernel, Prompt Flow, Langgraph, AutoGen, CrewAI, AutoGPT, Google ADK, Vertex AI, OpenAI Agents SDK, LangChain</p>
             </div>
             <div class="skill-category">
                 <h3><i data-lucide="cloud"></i>Cloud & Data</h3>
-                <p>Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP</p>
+                <p>Azure DevOps, Databricks, Synapse, PySpark, SQL, Google Workspace, GCP, Data Pipeline Architecture</p>
             </div>
             <div class="skill-category">
                 <h3><i data-lucide="code"></i>Development</h3>
-                <p>Python, C#, .NET, Next.js, React</p>
+                <p>Python, C#, .NET, FastAPI, Next.js, React, PyTorch, NumPy</p>
             </div>
             <div class="skill-category">
-                <h3><i data-lucide="box"></i>Frameworks</h3>
-                <p>Azure Semantic Kernel, Prompt Flow, Langgraph, AutoGen, CrewAI, AutoGPT, Google ADK, Vertex, Strands, OpenAI Agents SDK</p>
-            </div>
-            <div class="skill-category">
-                <h3><i data-lucide="bar-chart"></i>Business Tools</h3>
-                <p>PowerBI, Office 365, CRM Systems</p>
+                <h3><i data-lucide="users"></i>Leadership</h3>
+                <p>Technical Advisory, Stakeholder Engagement, Cross-functional Team Leadership, Enterprise Training & Enablement, Change Management</p>
             </div>
         </div>
     </section>
@@ -782,12 +836,14 @@
             <div class="job">
                 <h3>Technical Specialist - AI Lead | Insight (2022 - Present)</h3>
                 <ul>
-                    <li>Led pioneering initiatives in enterprise GenAI implementation</li>
-                    <li>Implemented the first demonstrated use case of an LLM-powered structured data querying system for Insight Global - Insight Assist</li>
-                    <li>Designed multi-agent systems for Cricket Australia</li>
-                    <li>Designed Tourism Northern Territory's AI platform</li>
-                    <li>Created proof-of-concept AI solutions for Dominos, South32, and UniSC</li>
-                    <li>Established enterprise GenAI implementation best practices</li>
+                    <li>Recognised thought leader in GenAI applications, driving enterprise AI transformation across multiple sectors</li>
+                    <li>Specialist in AI capability mapping and strategic roadmap development for Fortune 500 clients</li>
+                    <li>Conduct comprehensive AI maturity assessments and capability gap analysis for enterprise organisations</li>
+                    <li>Lead strategic AI advisory engagements, translating business objectives into actionable AI implementation strategies</li>
+                    <li>Established enterprise GenAI implementation best practices and governance frameworks</li>
+                    <li>Architected and delivered production-ready multi-agent systems for Cricket Australia, Tourism NT, and Petbarn</li>
+                    <li>Pioneered Insight's first LLM-powered structured data querying system (Insight Assist)</li>
+                    <li>Created strategic proof-of-concept AI solutions for Dominos, South32, and UniSC, demonstrating ROI and feasibility</li>
                 </ul>
             </div>
 
@@ -944,13 +1000,20 @@
         <div class="section-label">Core Competencies</div>
         <h2>Strategic capabilities</h2>
         <div class="competencies-grid">
-            <div class="competency-item">AI Strategy and Advisory</div>
-            <div class="competency-item">GenAI Implementation</div>
+            <div class="competency-item">AI Capability Mapping & Assessment</div>
+            <div class="competency-item">Strategic AI Roadmap Development</div>
+            <div class="competency-item">Enterprise AI Maturity Evaluation</div>
+            <div class="competency-item">GenAI Thought Leadership</div>
+            <div class="competency-item">Multi-Agent Architecture Design</div>
+            <div class="competency-item">AI Use Case Identification & Prioritisation</div>
+            <div class="competency-item">Technology Selection & Evaluation</div>
+            <div class="competency-item">Enterprise AI Implementation Strategy</div>
+            <div class="competency-item">Stakeholder Engagement & Advisory</div>
+            <div class="competency-item">AI Governance & Best Practices</div>
             <div class="competency-item">Large Language Model Optimisation</div>
             <div class="competency-item">Data-Driven Decision Making</div>
             <div class="competency-item">Team Leadership & Training</div>
             <div class="competency-item">Digital Transformation</div>
-            <div class="competency-item">Creative Problem Solving</div>
             <div class="competency-item">Cross-functional Collaboration</div>
         </div>
     </section>
@@ -958,8 +1021,8 @@
     <section id="contact" class="contact">
         <div class="section-label">Get In Touch</div>
         <div class="contact-content">
-            <h2>Let's discuss your<br>next AI initiative</h2>
-            <p>Available for consulting and collaboration on innovative AI projects</p>
+            <h2>Let's map your<br>AI capabilities</h2>
+            <p>Available for strategic AI advisory, capability mapping, and enterprise GenAI transformation initiatives</p>
             <div class="contact-info">
                 <a href="mailto:mrrobbiec@outlook.com" class="contact-detail"><i data-lucide="mail"></i>mrrobbiec@outlook.com</a>
                 <span class="contact-detail"><i data-lucide="phone"></i>0477 016 853</span>
@@ -969,7 +1032,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Rob Cooper. AI & Data Professional.</p>
+        <p>&copy; 2025 Rob Cooper. GenAI Thought Leader | AI Capability & Strategy Specialist.</p>
     </footer>
 
     <script type="module">
